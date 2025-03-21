@@ -1,6 +1,17 @@
 name: ci
 
 on:
+  workflow_dispatch:
+    inputs:
+      loglevel:
+        description: 'Log Level'
+        required: true
+        default:  'Warning'
+        type:  choice
+        options:
+          - info
+          - warning
+          - debug
   push:
     branches: main
 
